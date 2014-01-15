@@ -2,4 +2,4 @@
 
 ./tools.sh
 ./java.sh
-./glassfish.sh
+./tomcat.sh
