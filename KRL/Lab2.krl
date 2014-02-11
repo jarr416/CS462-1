@@ -9,7 +9,11 @@ ruleset Lab2 {
     }
     rule first_rule {
         select when pageview ".*" setting ()
-        notify("Hello World", "This is a sample rule.") with sticky = true;
-        notify("Hello World", "This is another sample rule.") with sticky = true;
+        notify("Hello World", "This is a sample rule.");
+        notify("Hello World", "This is another sample rule.");
+    }
+    rule second_rule {
+        select when pageview ".*" setting ()
+        notify("Hello World", "This is a sample rule.");
     }
 }
