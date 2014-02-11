@@ -9,14 +9,14 @@ ruleset Lab2 {
     }
     rule first_rule {
         select when pageview ".*" setting ()
-        each {
+        every {
             notify("Hello World", "This is a sample rule.") with sticky = true;
             notify("Hello World", "This is another sample rule.") with sticky = true;
         }
     }
     rule second_rule {
         select when pageview ".*" setting ()
-        each {
+        every {
             notify("Hello World", "This is a third sample rule.") with sticky = true;
         }
     }
