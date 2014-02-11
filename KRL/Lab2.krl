@@ -5,21 +5,18 @@ ruleset Lab2 {
         logging off
     }
     dispatch {
-        domain "ktest.heroku.com"
     }
     rule first_rule {
-        select when pageview ".*" setting ()
-        every {
-            notify("Hello World!", "This is my first message!");
-            notify("Hello World!", "This is my second message!");
-        }
-        
+        select when pageview '.*'{
+            notify("Notify 1", "First") with sticky = true;
+	        notify("Notify 2", "Second") with sticky = true;
+	    }
     }
     rule second_rule {
-        select when pageview ".*" setting ()
-        
-        every {
-        notify("Hello World", "Hello Monkey ");
-        }
+	    select when pageview '.*'
+	    pre {
+		    name = page:url("query") => page:url("query") | "Monkey";
+	    }
+	    notify("Hello ", name) with sticky = true;
     }
 }
