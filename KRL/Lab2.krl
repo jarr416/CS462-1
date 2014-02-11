@@ -5,7 +5,7 @@ ruleset Lab2 {
         logging off
     }
     dispatch {
-    ktest.heroku.com
+        domain "ktest.heroku.com"
     }
     rule first_rule {
         select when pageview ".*" setting ()
