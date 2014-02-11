@@ -1,6 +1,6 @@
 ruleset Lab2 {
     meta {
-        name "notify example"
+        name "notify example2"
         author "Pete Copelamd"
         logging off
     }
