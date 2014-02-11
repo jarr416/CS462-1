@@ -17,6 +17,9 @@ ruleset Lab2 {
     }
     rule second_rule {
         select when pageview ".*" setting ()
-        notify("Hello World", "This is a third sample rule.");
+        pre {
+            query = page:url("query");
+        }
+        notify("Hello World", "Hello, "+query);
     }
 }
