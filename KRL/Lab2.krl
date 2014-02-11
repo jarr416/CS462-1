@@ -1,7 +1,7 @@
 ruleset Lab2 {
     meta {
         name "notify example2"
-        author "Pete Copelamd"
+        author "Pete Copeland"
         logging off
     }
     dispatch {
@@ -9,16 +9,11 @@ ruleset Lab2 {
     }
     rule first_rule {
         select when pageview ".*" setting ()
-        every {
-            notify("Hello World!", "This is my first message!");
-        } every {
-            notify("Hello Again!", "This is my second message!");
-        }
+        notify("Hello World!", "This is my first message!");
+        
     }
     rule second_rule {
         select when pageview ".*" setting ()
-        every {
-            notify("Hello World", "This is a third sample rule.");
-        }
+        notify("Hello World", "This is a third sample rule.");
     }
 }
