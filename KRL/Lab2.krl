@@ -9,7 +9,10 @@ ruleset Lab2 {
     }
     rule first_rule {
         select when pageview ".*" setting ()
-        notify("Hello World!", "This is my first message!");
+        every {
+            notify("Hello World!", "This is my first message!");
+            notify("Hello World!", "This is my second message!");
+        }
         
     }
     rule second_rule {
