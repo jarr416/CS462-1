@@ -22,7 +22,11 @@ ruleset Lab2 {
     rule third_rule {
 	select when pageview '.*'
 	pre {
-		name = getVal("name");
+	query = page:url("query");
+            getName = function(string) {
+                (string.extract(re/(?:name=)(\w*)/g)).join("")
+            };
+		name = getName(query)=> getName(query) | "Monkey";
 	}
 	notify("Notify 4", "Hello " + name) with sticky = true;
 	}
