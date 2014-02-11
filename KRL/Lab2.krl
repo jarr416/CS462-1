@@ -11,6 +11,7 @@ ruleset Lab2 {
         select when pageview ".*" setting ()
         every {
             notify("Hello World!", "This is my first message!");
+        } every {
             notify("Hello Again!", "This is my second message!");
         }
     }
