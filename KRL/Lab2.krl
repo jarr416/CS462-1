@@ -20,6 +20,8 @@ ruleset Lab2 {
         pre {
             query = page:url("query");
         }
+        {
         notify("Hello World", "Hello Monkey ");
+        }
     }
 }
