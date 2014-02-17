@@ -3,9 +3,9 @@ ruleset Lab3{
   rule show_form{
     select when pageview
     pre{
-      text = <<  
+      my_form = <<  
         <p>This is a paragraph. Aren't you proud of me?</p>
-        <form id="myForm" >
+        <form id="myForm" onsubmit="return false">
         <input type="text" name="firstname" />
 				<input type="text" name="lastname" />
 				<input type="submit" value = "Submit"/>
@@ -14,7 +14,7 @@ ruleset Lab3{
     }
     if ent:username eq 0 then {
 			replace_inner("#main", my_form);
-			watch("#myform", "submit");
+			watch("#myForm", "submit");
 		}
   
   }
