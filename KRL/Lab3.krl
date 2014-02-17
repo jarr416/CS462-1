@@ -12,6 +12,10 @@ ruleset Lab3{
         </form>
       >>;
     }
+    if ent:username eq 0 then {
+			replace_inner("#main", my_form);
+			watch("#myform", "submit");
+		}
   
   }
 
