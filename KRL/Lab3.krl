@@ -38,14 +38,14 @@ ruleset Lab3{
   rule display_name{
 		select when pageview
 		pre {
-			html = "<p>Hello, " + ent:firstname + " " + ent:lastname"</p>";
+			html = "<p>Hello, " + ent:firstname + " " + ent:lastname + "</p>";
 		}
 		if not ent:username eq 0 then {
 			replace_inner("#main", html);
 		}
   }
 
-	rule clear{
+	rule clear_data{
 		select when pageview
 		if page:url("query").match(re/clear=1/) then {
 			replace_inner("#main", "Data cleared");
