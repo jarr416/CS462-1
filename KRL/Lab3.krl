@@ -40,7 +40,7 @@ ruleset Lab3{
 		pre {
 			html = "<p>Hello, " + ent:firstname + " " + ent:lastname + "</p>";
 		}
-		if not ent:username eq 0 then {
+		if not ent:firstname eq 0 then {
 			replace_inner("#main", html);
 		}
   }
