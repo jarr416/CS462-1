@@ -3,20 +3,22 @@ ruleset rotten_tomatoes{
     use module a169x701 alias CloudRain
     use module a41x186  alias SquareTag
   }
+  
+  dispatch{
+  
+  }
   global{
     api_key = "ymhqztdx34kqzev9bhgu7uab"
-    
-    get_movie = function(title) {
+    	get_movie = function(title) {
 					url = "http://api.rottentomatoes.com/api/public/v1.0/movies.json";
 					http:get(url, {"apikey":api_key, "q":title}).pick("$.content").decode();
 				}
-				
-		mydiv = << <div id="main"></div> >>;
-	  myform = <<
+	mydiv = << <div id="main"></div> >>;
+	myform = <<
         <form id="myform">
-		      Movie Title: <input type="text" name="movie_title" />
-		      <input type="submit" />
-		    </form>
+		Movie Title: <input type="text" name="movie_title" />
+		<input type="submit" />
+		</form>
       >>;
   }
   
