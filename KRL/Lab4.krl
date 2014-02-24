@@ -4,7 +4,7 @@ ruleset rotten_tomatoes{
     use module a41x186  alias SquareTag
   }
   global{
-    apiKey = "ymhqztdx34kqzev9bhgu7uab"
+    api_key = "ymhqztdx34kqzev9bhgu7uab"
     
     get_movie = function(title) {
 					url = "http://api.rottentomatoes.com/api/public/v1.0/movies.json";
