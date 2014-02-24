@@ -61,12 +61,10 @@ ruleset rotten_tomatoes{
 					<h2>#{title}</h2><h3>(#{year})</h3><br />
 					<b>Critic Score: </b>#{critic}<br />
 					<b>Audience Score: </b>#{audience}<br />
-					<p>#{synopsis}</p>
+					<b>Synopsis: </b>#{synopsis}<br />
 					>>;
 	}
 	{
-		//notify("response", "r: " + response) with sticky = true;
-		//CloudRain:createLoadPanel("Rotten Tomatoes", {}, result_html + myform);
 		replace_inner("#main", result_html);
 
 	}
@@ -74,7 +72,6 @@ ruleset rotten_tomatoes{
   
   rule display_error {
 	select when explicit display_error
-	//CloudRain:createLoadPanel("Rotten Tomatoes", {}, "No movie results found for \"" + event:attr("search") + "\"" + myform);
 	replace_inner("#main", "No movie results found for \"" + event:attr("search") + "\"");
   }
 }
