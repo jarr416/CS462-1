@@ -1,6 +1,6 @@
 ruleset lab5{
   meta{
-  	myName = "Pete Copeland";
+  	author "Pete Copeland"
     use module a169x701 alias CloudRain
     use module a41x186  alias SquareTag
   }
@@ -24,9 +24,7 @@ ruleset lab5{
 		  shout = checkin.pick("$..shout");
 		  createdAt = checkin.pick("$..createdAt");
     }
-    {
     
-    }
     fired{
       set ent:venue venue;
       set ent:city city;
