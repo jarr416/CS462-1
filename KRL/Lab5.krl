@@ -48,7 +48,6 @@ ruleset lab5{
 			  <b>Shout: </b> #{shout}<br/>
 			  <b>Created: </b> #{createdAt}<br/>
 			  <br/><br/>
-			  #{ent:data}
 			  >>;
 	  }
 	  CloudRain:createLoadPanel("Foursquare", {}, my_html);
